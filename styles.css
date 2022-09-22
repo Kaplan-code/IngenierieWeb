@@ -12,3 +12,10 @@ body {
 .active {
     background-color: #04AA6D;
 }
+#conteneur
+{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
