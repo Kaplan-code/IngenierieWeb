@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="styles.css" rel="stylesheet" />
+    <title  >Page d'exemple</title>
+</head>
+<body style="background : url(cinema.png) 50% 50% fixed no-repeat;">
+    <nav class="menu">
+        <ul>
+            <li><a   href="#Accueil" >Accueil</a></li>
+            <li><a   href="#Apropos">À propos</a></li>
+            <li><a   href="#Reservation">Réserver</a></li>
+            <li><a   href="#Contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div>
+        <img src="logo.png" alt="logo de la page">
+        <h1  ><img src="icon.png" alt="icone de la page">Site de cinema</h1>
+        <a href="http://url_vers_accueil">
+            <div  >Retour à l'accueil</div>
+        </a>
+    </div>
+    <div href="#Apropos" id="Apropos" class="section1">
+        <p  >Bienvenue sur cinema france</p>
+        <p>Au cœur du cinéma</p>
+        <p  > 
+            Acteur historique du cinéma, Nous sommes aujourd’hui premier studio de cinéma français et leader de l’exploitation de salles en Europe continentale.
+            </p>
+        <p  >Pionniers de la réservation en ligne et du placement numéroté, nos cinémas n'ont de cessent de se moderniser et d’apporter plus de services, pour simplifier l'expérience digitale proposée à nos spectateurs. 
+            De la recommandation de films personnalisée, au billet sans-contact la poursuite de l'innovation est permanente. </p>
+        <p> Lieux de vie et
+            de sensations
+            
+            Prolonger l’émotion cinématographique au-delà de l’écran est la raison d’être de nos cinémas. Nous concevons chaque lieu comme un environnement accueillant, propice à la détente et au divertissement. </p>
+    </div>
+    <img src="pic.png" alt="logo de la page"><img src="pic2.png" alt="logo de la page"><img src="index.png" alt="logo de la page">
+    <div id="Reservation">
+        <form action="">
+            <fieldset>
+                <legend  >Réservation:</legend>
+                <label for="nom"  >Nom:</label><br>
+                <input type="text" id="nom" name="nom" value="John"><br>
+                <label for="prenom"  >Prénom:</label><br>
+                <input type="text" id="prenom" name="prenom" value="Doe"><br><br>
+                <label for="adresse"  >Adresse:</label><br>
+                <input type="text" id="adresse" name="adresse" ><br><br>
+                <label for="date"  >date:</label><br>
+                <input type="date" id="date" name="date"><br><br>
+                <label for="nbrPersonne"  >Nombre de personne:</label><br>
+                <input type="number" id="nbrPersonne" name="nbrPersonne"><br><br>
+                <label for="movie">Film:</label>
+                <select id="movie" name="movies">
+                    <option value="IronMan ">Iron Man</option>
+                    <option value="IronMan2">Iron Man2</option>
+                    <option value="Ant-Man">Ant-Man</option>
+                    <option value="CaptainMarvel">Captain Marvel</option>
+                </select>
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+    </div>
+    <footer>
+        <p>All right to Kaplan & Metral</p>
+        <p><a href="mailto:exemple@example.com">Kaplan & Metral</a></p>
+      </footer> 
+</body>
+

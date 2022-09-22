@@ -1,0 +1,14 @@
+head {
+    color: white;
+}
+body {
+    color: white;
+}
+ 
+.menu{
+    display: inline;
+}
+
+.active {
+    background-color: #04AA6D;
+}
