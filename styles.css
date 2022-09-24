@@ -98,7 +98,7 @@ nav a {
     background-color: #FFFFFF;
     color: #777;
 }
-.motus {
+.basic {
     width: 50px;
     height: 50px;
     font-size: 3em;
@@ -107,4 +107,27 @@ nav a {
     text-align: center;
     border-width: 6px;
     border-color: #141414;
+}
+.yellow {
+    width: 50px;
+    height: 50px;
+    font-size: 3em;
+    font-weight:bold;
+    text-transform: capitalize;
+    text-align: center;
+    border-width: 4px;
+    border-color: yellow;
+    border-radius: 50%;
+    background-color: yellow;
+}
+.red {
+    width: 50px;
+    height: 50px;
+    font-size: 3em;
+    font-weight:bold;
+    text-transform: capitalize;
+    text-align: center;
+    border-width: 4px;
+    border-color: red;
+    background-color: red;
 }
