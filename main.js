@@ -1,3 +1,8 @@
+window.addEventListener('DOMContentLoaded', (event) => {
+  startGame();
+});
+
+
 // For performance we use Set instead of Array (src: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
 dic = new Set([
   'ABACA',
@@ -2125,7 +2130,7 @@ dic = new Set([
   'ENFLE',
   'ENFUI',
   'ENGIN',
-  'ENJEU',
+  'ENbasic',
   'ENLIA',
   'ENLIE',
   'ENNUI',
@@ -3421,9 +3426,9 @@ dic = new Set([
   'JETEZ',
   'JETON',
   'JETTE',
-  'JEUDI',
-  'JEUNA',
-  'JEUNE',
+  'basicDI',
+  'basicNA',
+  'basicNE',
   'JEZES',
   'JIHAD',
   'JOCKO',
@@ -12673,7 +12678,7 @@ dic = new Set([
   'ENIGME',
   'ENIVRA',
   'ENIVRE',
-  'ENJEUX',
+  'ENbasicX',
   'ENJOLA',
   'ENJOLE',
   'ENJOUE',
@@ -15680,15 +15685,15 @@ dic = new Set([
   'JETIEZ',
   'JETONS',
   'JETTES',
-  'JEUDIS',
-  'JEUNAI',
-  'JEUNAS',
-  'JEUNAT',
-  'JEUNER',
-  'JEUNES',
-  'JEUNET',
-  'JEUNEZ',
-  'JEUNOT',
+  'basicDIS',
+  'basicNAI',
+  'basicNAS',
+  'basicNAT',
+  'basicNER',
+  'basicNES',
+  'basicNET',
+  'basicNEZ',
+  'basicNOT',
   'JIGGER',
   'JIHADS',
   'JINGLE',
@@ -16763,7 +16768,7 @@ dic = new Set([
   'MAIRIE',
   'MAISON',
   'MAITRE',
-  'MAJEUR',
+  'MAbasicR',
   'MAJORA',
   'MAJORE',
   'MAJORS',
@@ -25382,7 +25387,7 @@ dic = new Set([
   'ANTIART',
   'ANTIFEU',
   'ANTIGEL',
-  'ANTIJEU',
+  'ANTIbasic',
   'ANTIOPE',
   'ANTIQUE',
   'ANTIROI',
@@ -31961,8 +31966,8 @@ dic = new Set([
   'DEJETES',
   'DEJETEZ',
   'DEJETTE',
-  'DEJEUNA',
-  'DEJEUNE',
+  'DEbasicNA',
+  'DEbasicNE',
   'DEJOUAI',
   'DEJOUAS',
   'DEJOUAT',
@@ -40046,16 +40051,16 @@ dic = new Set([
   'JETISSE',
   'JETTENT',
   'JETTERA',
-  'JEUNAIS',
-  'JEUNAIT',
-  'JEUNANT',
-  'JEUNENT',
-  'JEUNERA',
-  'JEUNETS',
-  'JEUNEUR',
-  'JEUNIEZ',
-  'JEUNONS',
-  'JEUNOTS',
+  'basicNAIS',
+  'basicNAIT',
+  'basicNANT',
+  'basicNENT',
+  'basicNERA',
+  'basicNETS',
+  'basicNEUR',
+  'basicNIEZ',
+  'basicNONS',
+  'basicNOTS',
   'JIGGERS',
   'JINGLES',
   'JINGXIS',
@@ -41613,8 +41618,8 @@ dic = new Set([
   'MAITRES',
   'MAIZENA',
   'MAJESTE',
-  'MAJEURE',
-  'MAJEURS',
+  'MAbasicRE',
+  'MAbasicRS',
   'MAJORAI',
   'MAJORAL',
   'MAJORAS',
@@ -46913,7 +46918,7 @@ dic = new Set([
   'RAISINE',
   'RAISINS',
   'RAISONS',
-  'RAJEUNI',
+  'RAbasicNI',
   'RAJOUTA',
   'RAJOUTE',
   'RAJOUTS',
@@ -55042,7 +55047,7 @@ dic = new Set([
   'ANTIGELS',
   'ANTIGENE',
   'ANTIHALO',
-  'ANTIJEUX',
+  'ANTIbasicX',
   'ANTIJUIF',
   'ANTILOPE',
   'ANTIMITE',
@@ -60171,7 +60176,7 @@ dic = new Set([
   'DEJAUNIS',
   'DEJETANT',
   'DEJETEES',
-  'DEJEUNER',
+  'DEbasicNER',
   'DEJOUANT',
   'DEJOUEES',
   'DEJUCHEE',
@@ -62428,7 +62433,7 @@ dic = new Set([
   'ENTRAXES',
   'ENTREBAT',
   'ENTREFER',
-  'ENTREJEU',
+  'ENTREbasic',
   'ENTREMET',
   'ENTREMIS',
   'ENTRENUI',
@@ -66325,13 +66330,13 @@ dic = new Set([
   'JETABLES',
   'JETEUSES',
   'JETISSES',
-  'JEUNESSE',
-  'JEUNETTE',
-  'JEUNEURS',
-  'JEUNEUSE',
-  'JEUNISME',
-  'JEUNISTE',
-  'JEUNOTTE',
+  'basicNESSE',
+  'basicNETTE',
+  'basicNEURS',
+  'basicNEUSE',
+  'basicNISME',
+  'basicNISTE',
+  'basicNOTTE',
   'JINISMES',
   'JOBARDEE',
   'JOBARDER',
@@ -67418,7 +67423,7 @@ dic = new Set([
   'MAITRISE',
   'MAIZENAS',
   'MAJESTES',
-  'MAJEURES',
+  'MAbasicRES',
   'MAJORANT',
   'MAJORATS',
   'MAJORAUX',
@@ -71736,9 +71741,9 @@ dic = new Set([
   'RAISINES',
   'RAISINET',
   'RAISONNE',
-  'RAJEUNIE',
-  'RAJEUNIR',
-  'RAJEUNIS',
+  'RAbasicNIE',
+  'RAbasicNIR',
+  'RAbasicNIS',
   'RAJOUTEE',
   'RAJOUTER',
   'RAJOUTES',
@@ -92257,14 +92262,14 @@ dic = new Set([
   'DEJETIONS',
   'DEJETTENT',
   'DEJETTERA',
-  'DEJEUNAIS',
-  'DEJEUNAIT',
-  'DEJEUNANT',
-  'DEJEUNENT',
-  'DEJEUNERA',
-  'DEJEUNERS',
-  'DEJEUNIEZ',
-  'DEJEUNONS',
+  'DEbasicNAIS',
+  'DEbasicNAIT',
+  'DEbasicNANT',
+  'DEbasicNENT',
+  'DEbasicNERA',
+  'DEbasicNERS',
+  'DEbasicNIEZ',
+  'DEbasicNONS',
   'DEJOUAMES',
   'DEJOUASSE',
   'DEJOUATES',
@@ -99164,7 +99169,7 @@ dic = new Set([
   'ENTRECOTE',
   'ENTREFERS',
   'ENTREGENT',
-  'ENTREJEUX',
+  'ENTREbasicX',
   'ENTRELACA',
   'ENTRELACE',
   'ENTRELACS',
@@ -108379,21 +108384,21 @@ dic = new Set([
   'JETTERIEZ',
   'JETTERONS',
   'JETTERONT',
-  'JEUNAIENT',
-  'JEUNASSES',
-  'JEUNEMENT',
-  'JEUNERAIS',
-  'JEUNERAIT',
-  'JEUNERENT',
-  'JEUNERIEZ',
-  'JEUNERONS',
-  'JEUNERONT',
-  'JEUNESSES',
-  'JEUNETTES',
-  'JEUNEUSES',
-  'JEUNISMES',
-  'JEUNISTES',
-  'JEUNOTTES',
+  'basicNAIENT',
+  'basicNASSES',
+  'basicNEMENT',
+  'basicNERAIS',
+  'basicNERAIT',
+  'basicNERENT',
+  'basicNERIEZ',
+  'basicNERONS',
+  'basicNERONT',
+  'basicNESSES',
+  'basicNETTES',
+  'basicNEUSES',
+  'basicNISMES',
+  'basicNISTES',
+  'basicNOTTES',
   'JOAILLIER',
   'JOBARDAIS',
   'JOBARDAIT',
@@ -119490,8 +119495,8 @@ dic = new Set([
   'RAISONNER',
   'RAISONNES',
   'RAISONNEZ',
-  'RAJEUNIES',
-  'RAJEUNIRA',
+  'RAbasicNIES',
+  'RAbasicNIRA',
   'RAJOUTAIS',
   'RAJOUTAIT',
   'RAJOUTANT',
@@ -148312,13 +148317,13 @@ dic = new Set([
   'DEJETTERAI',
   'DEJETTERAS',
   'DEJETTEREZ',
-  'DEJEUNAMES',
-  'DEJEUNASSE',
-  'DEJEUNATES',
-  'DEJEUNERAI',
-  'DEJEUNERAS',
-  'DEJEUNEREZ',
-  'DEJEUNIONS',
+  'DEbasicNAMES',
+  'DEbasicNASSE',
+  'DEbasicNATES',
+  'DEbasicNERAI',
+  'DEbasicNERAS',
+  'DEbasicNEREZ',
+  'DEbasicNIONS',
   'DEJOUAIENT',
   'DEJOUASSES',
   'DEJOUERAIS',
@@ -165748,9 +165753,9 @@ dic = new Set([
   'JETONNIERS',
   'JETTATURAS',
   'JETTERIONS',
-  'JEUNASSENT',
-  'JEUNASSIEZ',
-  'JEUNERIONS',
+  'basicNASSENT',
+  'basicNASSIEZ',
+  'basicNERIONS',
   'JOAILLERIE',
   'JOAILLIERE',
   'JOAILLIERS',
@@ -176842,12 +176847,12 @@ dic = new Set([
   'RAISONNIEZ',
   'RAISONNONS',
   'RAJASTHANI',
-  'RAJEUNIMES',
-  'RAJEUNIRAI',
-  'RAJEUNIRAS',
-  'RAJEUNIREZ',
-  'RAJEUNISSE',
-  'RAJEUNITES',
+  'RAbasicNIMES',
+  'RAbasicNIRAI',
+  'RAbasicNIRAS',
+  'RAbasicNIREZ',
+  'RAbasicNISSE',
+  'RAbasicNITES',
   'RAJOUTAMES',
   'RAJOUTASSE',
   'RAJOUTATES',
@@ -190461,16 +190466,31 @@ const number = Math.floor(Math.random() * dic.size);
 // Play is already active
 let play = false;
 
+// Number of testing
+let testing = 0 ;
+
+
+
 const word = [...dic][number]; //dic.getByIndex(number);
 
-console.log(word + ' nombre : ' + word.length);
+console.log(word + ' taille : ' + word.length);
 
-// const table = document.getElementsByClassName('jeu');
+// const table = document.getElementsByClassName('basic');
 
 // const td = table.addElement(td);
 
+
+
 function startGame() {
+  if(play === true){
+    alert('Game progressing');
+    return;
+  }
+
   play = true;
+
+  // Create old stats 
+  createOldStats();
 
   // creates the input
   const input = document.createElement('input', 'type: text');
@@ -190490,13 +190510,6 @@ function startGame() {
       // the end of the table row
       const cell = document.createElement('td');
       cell.setAttribute('class', j);
-      //   const cellText = '';
-      //   if (i === 1 && j === 0) {
-      //     cellText = document.createTextNode(word.charAt(j));
-      //   } else {
-      //     cellText = document.create('');
-      //   }
-      //   cell.appendChild(cellText);
       row.appendChild(cell);
     }
 
@@ -190520,19 +190533,111 @@ function startGame() {
   });
 
   // sets the border attribute of tbl to '2'
-  tbl.setAttribute('class', 'jeu');
+  tbl.setAttribute('class', 'basic');
 }
 
-function checkInput(word) {
-  word = word.toUpperCase();
+function checkInput(input) {
+  input = input.toUpperCase();
   console.log();
 
-  if (dic.has(word) != true) {
+  if (testing >= 6){
+    alert('game over');
+    saveParty();
+
+    return;
+  }
+
+  if (dic.has(input) != true) {
     alert('word not existing');
     return;
   }
 
-  document.body.children[1].children[0].children[0].children[0].appendChild(
-    document.createTextNode(word),
-  );
+  if (word.length < input.length){
+    alert('word too long');
+    return;
+  }
+
+  // Check if the input is the word to guess
+  if(word === input){
+    for (let cell = 0; cell < input.length; cell++) {
+      if(document.body.getElementsByClassName('basic')[0].children[0].children[testing].children[cell].textContent === ''){
+        document.body.getElementsByClassName('basic')[0].children[0].children[testing].children[cell].appendChild(document.createTextNode(input.charAt(cell)));
+      }
+      document.body.getElementsByClassName('basic')[0].children[0].children[testing].children[cell].setAttribute('class', 'yellow');
+      
+    }
+    testing++;
+    saveParty();
+    alert('You win');
+    return
+  }
+  
+  // If it's not 
+  else{
+    for (let cell = 0; cell < input.length; cell++) {
+      if(document.body.getElementsByClassName('basic')[0].children[0].children[testing].children[cell].textContent === ''){
+        document.body.getElementsByClassName('basic')[0].children[0].children[testing].children[cell].appendChild(document.createTextNode(input.charAt(cell)));
+      }
+      if (letterInWord(input.charAt(cell), cell) === 1) {
+        document.body.getElementsByClassName('basic')[0].children[0].children[testing].children[cell].setAttribute('class', 'green');
+      }
+      else if (letterInWord(input.charAt(cell), cell) === 2) {
+        document.body.getElementsByClassName('basic')[0].children[0].children[testing].children[cell].setAttribute('class', 'yellow');
+        addOnLines(input.charAt(cell), cell);
+      }
+      else{
+        document.body.getElementsByClassName('basic')[0].children[0].children[testing].children[cell].setAttribute('class', 'red');
+      }
+  } 
+  }
+  testing++;
+}
+
+function letterInWord(letter, position){
+  if (word.charAt(position) === letter ) {
+    return 2;
+  }
+  else{
+    for (let index = 0; index < word.length; index++) {
+      if (word.charAt(index) === letter ){
+        console.log(letter + ' is in word ' + word + ' at position ' + index)
+        return 1;
+      }
+    }
+  }
+ 
+
+  return 0
+}
+
+function addOnLines(letter, position){
+  for (let line = testing+1; line < 6; line++){
+    if(document.body.getElementsByClassName('basic')[0].children[0].children[line].children[position].textContent === ''){
+      document.body.getElementsByClassName('basic')[0].children[0].children[line].children[position].appendChild(document.createTextNode(letter));
+      document.body.getElementsByClassName('basic')[0].children[0].children[line].children[position].setAttribute('class', 'yellow');
+    }
+  }
+}
+
+function createOldStats() {
+
+  let div = document.createElement('div');
+  const oldWord = document.createElement('p');
+  oldWord.setAttribute('class','oldword')
+
+  for (let index = 0; index < localStorage.length; index++) {
+    localStorage[index];
+    oldWord.appendChild(document.createTextNode(`mot à deviner : ${localStorage.key(index)}  avec un nombre de d\'essais de : ${localStorage.getItem(localStorage.key(index))}` ))
+    oldWord.appendChild(document.createElement('br'));    
+  }
+
+  div.appendChild(oldWord);
+  
+  document.body.appendChild(div);
+
+}
+
+
+function saveParty(){
+  localStorage.setItem(word, testing);
 }
