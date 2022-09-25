@@ -1,8 +1,12 @@
+html {
+    scroll-behavior: smooth;
+  }
 head {
     color: white;
 }
 body {
     color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
  
 .menu{
@@ -18,4 +22,114 @@ body {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    font-size: 2em;
+}
+h1 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 4.6em;
+}
+h2 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 2em;
+}
+section {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px;
+}
+#Accueil {
+    padding: 70px;
+}
+#apropos {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px;
+    font-size: 2em;
+    background-image: url("/home/user/Documents/IngenierieWeb/arr.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+nav {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    background: #cfd8dc;
+    width: 100%;
+    text-align: left;
+    text-transform: uppercase;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    font-size: 2em;
+    justify-content: center;
+}
+nav li {
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+  }
+
+nav a {
+    text-decoration: none;
+    letter-spacing: 2px;
+    padding: 5px;
+}
+#visite {
+    background-color: #141414;
+}
+#decouvrir {
+    background-color: #FFFFFF;
+    color: #777;
+}
+.basic {
+    width: 50px;
+    height: 50px;
+    font-size: 3em;
+    font-weight:bold;
+    text-transform: capitalize;
+    text-align: center;
+    border-width: 6px;
+    border-color: #141414;
+    border-radius: 10%;
+}
+.yellow {
+    width: 50px;
+    height: 50px;
+    font-size: 3em;
+    font-weight:bold;
+    text-transform: capitalize;
+    text-align: center;
+    border-width: 4px;
+    border-color: yellow;
+    border-radius: 50%;
+    background-color: yellow;
+}
+.red {
+    width: 50px;
+    height: 50px;
+    font-size: 3em;
+    font-weight:bold;
+    text-transform: capitalize;
+    text-align: center;
+    border-width: 4px;
+    border-color: red;
+    background-color: red;
+    border-radius: 10%;
 }
