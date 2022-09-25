@@ -190471,7 +190471,7 @@ let testing = 0 ;
 
 
 
-const word = [...dic][number]; //dic.getByIndex(number);
+const word = [...dic][number];
 
 console.log(word + ' taille : ' + word.length);
 
