@@ -190469,31 +190469,23 @@ let play = false;
 // Number of testing
 let testing = 0 ;
 
-
-
 const word = [...dic][number];
 
 console.log(word + ' taille : ' + word.length);
 
-// const table = document.getElementsByClassName('basic');
-
-// const td = table.addElement(td);
-
-
-
 function startGame() {
-  if(play === true){
+  if (play === true) {
     alert('Game progressing');
     return;
   }
 
   play = true;
 
-  // Create old stats 
+  // Create old stats
   createOldStats();
 
-  // creates the input
-  const input = document.createElement('input', 'type: text');
+  // // creates the input
+  let input = document.createElement('input', 'type: text');
 
   // creates a <table> element and a <tbody> element
   const tbl = document.createElement('table');
@@ -190503,14 +190495,29 @@ function startGame() {
   for (let i = 0; i < 6; i++) {
     // creates a table row
     const row = document.createElement('tr');
-    row.setAttribute('class', i);
     for (let j = 0; j < word.length; j++) {
       // Create a <td> element and a text node, make the text
       // node the contents of the <td>, and put the <td> at
       // the end of the table row
-      const cell = document.createElement('td');
-      cell.setAttribute('class', j);
-      row.appendChild(cell);
+      const letterinput = document.createElement('input');
+
+      letterinput.onkeyup = function (e) {
+        if (e.key === 'Backspace') {
+          if (letterinput.previousElementSibling) {
+            // console.log(e.key);
+            letterinput.previousElementSibling.focus();
+          }
+        } else {
+          if (letterinput.nextElementSibling) {
+            letterinput.nextElementSibling.focus();
+          }
+        }
+      };
+
+      letterinput.setAttribute('type', 'text');
+      letterinput.setAttribute('maxlength', '1');
+      letterinput.setAttribute('class', 'basic');
+      row.appendChild(letterinput);
     }
 
     // add the row to the end of the table body
@@ -190520,27 +190527,43 @@ function startGame() {
   // put the <tbody> in the <table>
   tbl.appendChild(tblBody);
   // appends <table> into <body>
-  document.body.appendChild(tbl);
+  document.body.getElementsByClassName('jeu')[0].appendChild(tbl);
 
   // appends <input> into <body>
-  document.body.appendChild(input);
+  document.body.getElementsByClassName('jeu')[0].appendChild(input);
+
+  tbl.setAttribute('class', 'tab');
 
   // sets the keypress function
-  input.addEventListener('keyup', (event) => {
+  tbl.addEventListener('keyup', (event) => {
     if (event.key === 'Enter') {
-      checkInput(input.value);
+      checkInput(getWordInput());
     }
   });
-
-  // sets the border attribute of tbl to '2'
-  tbl.setAttribute('class', 'basic');
 }
 
+
+// Return input in a string
+function getWordInput() {
+  let wordCheck = '';
+  for (let j = 0; j < word.length; j++) {
+    let letterI =
+      document.getElementsByClassName('tab')[0].children[0].children[testing]
+        .children[j].value;
+    if (letterI === '') {
+      break;
+    }
+    wordCheck = wordCheck + letterI;
+  }
+  // console.log(wordCheck);
+  return wordCheck;
+}
+
+// Check the input 
 function checkInput(input) {
   input = input.toUpperCase();
-  console.log();
 
-  if (testing >= 6){
+  if (testing >= 6) {
     alert('game over');
     saveParty();
 
@@ -190552,92 +190575,162 @@ function checkInput(input) {
     return;
   }
 
-  if (word.length < input.length){
+  if (word.length < input.length) {
     alert('word too long');
     return;
   }
 
   // Check if the input is the word to guess
-  if(word === input){
+  if (word === input) {
     for (let cell = 0; cell < input.length; cell++) {
-      if(document.body.getElementsByClassName('basic')[0].children[0].children[testing].children[cell].textContent === ''){
-        document.body.getElementsByClassName('basic')[0].children[0].children[testing].children[cell].appendChild(document.createTextNode(input.charAt(cell)));
+      if (
+        document.body.getElementsByClassName('tab')[0].children[0].children[
+          testing
+        ].children[cell].textContent === ''
+      ) {
+        document.body
+          .getElementsByClassName('tab')[0]
+          .children[0].children[testing].children[cell].appendChild(
+            document.createTextNode(input.charAt(cell)),
+          );
       }
-      document.body.getElementsByClassName('basic')[0].children[0].children[testing].children[cell].setAttribute('class', 'yellow');
-      
+      document.body
+        .getElementsByClassName('tab')[0]
+        .children[0].children[testing].children[cell].setAttribute(
+          'class',
+          'yellow',
+        );
     }
     testing++;
     saveParty();
     alert('You win');
-    return
+    return;
   }
-  
-  // If it's not 
-  else{
+
+  // If it's not
+  else {
     for (let cell = 0; cell < input.length; cell++) {
-      if(document.body.getElementsByClassName('basic')[0].children[0].children[testing].children[cell].textContent === ''){
-        document.body.getElementsByClassName('basic')[0].children[0].children[testing].children[cell].appendChild(document.createTextNode(input.charAt(cell)));
+      if (
+        document.body.getElementsByClassName('tab')[0].children[0].children[
+          testing
+        ].children[cell].textContent === ''
+      ) {
+        document.body
+          .getElementsByClassName('tab')[0]
+          .children[0].children[testing].children[cell].appendChild(
+            document.createTextNode(input.charAt(cell)),
+          );
       }
       if (letterInWord(input.charAt(cell), cell) === 1) {
-        document.body.getElementsByClassName('basic')[0].children[0].children[testing].children[cell].setAttribute('class', 'green');
-      }
-      else if (letterInWord(input.charAt(cell), cell) === 2) {
-        document.body.getElementsByClassName('basic')[0].children[0].children[testing].children[cell].setAttribute('class', 'yellow');
+        document.body
+          .getElementsByClassName('tab')[0]
+          .children[0].children[testing].children[cell].setAttribute(
+            'class',
+            'green',
+          );
+      } else if (letterInWord(input.charAt(cell), cell) === 2) {
+        document.body
+          .getElementsByClassName('tab')[0]
+          .children[0].children[testing].children[cell].setAttribute(
+            'class',
+            'yellow',
+          );
         addOnLines(input.charAt(cell), cell);
+      } else {
+        document.body
+          .getElementsByClassName('tab')[0]
+          .children[0].children[testing].children[cell].setAttribute(
+            'class',
+            'red',
+          );
       }
-      else{
-        document.body.getElementsByClassName('basic')[0].children[0].children[testing].children[cell].setAttribute('class', 'red');
-      }
-  } 
+    }
   }
   testing++;
+
+  nextTour();
 }
 
-function letterInWord(letter, position){
-  if (word.charAt(position) === letter ) {
-    return 2;
+// Go to the next tour
+function nextTour() {
+  if (testing < 6) {
+    let i = 0;
+    while (
+      document.body
+        .getElementsByClassName('tab')[0]
+        .children[0].children[testing].children[i].getAttribute('class') ===
+      'yellow'
+    ) {
+      i++;
+    }
+    document.body
+      .getElementsByClassName('tab')[0]
+      .children[0].children[testing].children[i].focus();
   }
-  else{
+}
+
+// Check if the letter is in word to guess and if is at the good place
+function letterInWord(letter, position) {
+  if (word.charAt(position) === letter) {
+    return 2;
+  } else {
     for (let index = 0; index < word.length; index++) {
-      if (word.charAt(index) === letter ){
-        console.log(letter + ' is in word ' + word + ' at position ' + index)
+      if (word.charAt(index) === letter) {
+        // console.log(letter + ' is in word ' + word + ' at position ' + index);
         return 1;
       }
     }
   }
- 
 
-  return 0
+  return 0;
 }
 
-function addOnLines(letter, position){
-  for (let line = testing+1; line < 6; line++){
-    if(document.body.getElementsByClassName('basic')[0].children[0].children[line].children[position].textContent === ''){
-      document.body.getElementsByClassName('basic')[0].children[0].children[line].children[position].appendChild(document.createTextNode(letter));
-      document.body.getElementsByClassName('basic')[0].children[0].children[line].children[position].setAttribute('class', 'yellow');
+// Add letter guessed in others lines
+function addOnLines(letter, position) {
+  for (let line = testing + 1; line < 6; line++) {
+    if (
+      document.body.getElementsByClassName('tab')[0].children[0].children[line]
+        .children[position].textContent === ''
+    ) {
+      document.body.getElementsByClassName('tab')[0].children[0].children[
+        line
+      ].children[position].value = letter;
+      document.body
+        .getElementsByClassName('tab')[0]
+        .children[0].children[line].children[position].setAttribute(
+          'class',
+          'yellow',
+        );
     }
   }
 }
 
+// Get old statistique saved in local storage
 function createOldStats() {
-
   let div = document.createElement('div');
   const oldWord = document.createElement('p');
-  oldWord.setAttribute('class','oldword')
+  oldWord.setAttribute('class', 'oldword');
 
   for (let index = 0; index < localStorage.length; index++) {
     localStorage[index];
-    oldWord.appendChild(document.createTextNode(`mot à deviner : ${localStorage.key(index)}  avec un nombre de d\'essais de : ${localStorage.getItem(localStorage.key(index))}` ))
-    oldWord.appendChild(document.createElement('br'));    
+    oldWord.appendChild(
+      document.createTextNode(
+        `mot à deviner : ${localStorage.key(
+          index,
+        )}  avec un nombre de d\'essais de : ${localStorage.getItem(
+          localStorage.key(index),
+        )}`,
+      ),
+    );
+    oldWord.appendChild(document.createElement('br'));
   }
 
   div.appendChild(oldWord);
-  
-  document.body.appendChild(div);
 
+  document.body.getElementsByClassName('jeu')[0].appendChild(div);
 }
 
-
+// Save current party in local storage
 function saveParty(){
   localStorage.setItem(word, testing);
 }

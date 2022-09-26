@@ -70,3 +70,58 @@ section {
     background-color: #FFFFFF;
     color: #777;
 }
+.basic {
+    width: 50px;
+    height: 50px;
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+    border-radius: 10%;
+    background-color: #dadada;
+    margin: 3px;
+}
+
+.yellow {
+    width: 50px;
+    height: 50px;
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+    border-color: #fdfa3a;
+    border-radius: 50%;
+    background-color: #fdfa3a;
+    margin: 3px;
+}
+
+.green {
+    width: 50px;
+    height: 50px;
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+    border-width: 4px;
+    border-color: green;
+    border-radius: 10%;
+    background-color: green;
+    margin: 3px;
+}
+
+.red {
+    width: 50px;
+    height: 50px;
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+    border-color: #f32d51;
+    background-color: #f32d51;
+    border-radius: 10%;
+    margin: 3px;
+}
+
+.oldword {
+    color: #141414;
+}
