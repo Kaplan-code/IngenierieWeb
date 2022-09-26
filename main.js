@@ -190485,8 +190485,8 @@ function startGame() {
   createOldStats();
 
   // // creates the input
-  let input = document.createElement('input', 'type: text');
-
+  // let input = document.createElement('input', 'type: text');
+  let input;
   // creates a <table> element and a <tbody> element
   const tbl = document.createElement('table');
   const tblBody = document.createElement('tbody');
@@ -190496,27 +190496,46 @@ function startGame() {
     // creates a table row
     const row = document.createElement('tr');
     for (let j = 0; j < word.length; j++) {
-      // Create a <td> element and a text node, make the text
-      // node the contents of the <td>, and put the <td> at
-      // the end of the table row
       const letterinput = document.createElement('input');
 
+      if ((j === 0) & (i == 0)) {
+        console.log(word.charAt(0));
+        letterinput.value = word.charAt(0);
+        letterinput.setAttribute('class', 'yellow');
+      } else {
+        letterinput.setAttribute('class', 'basic');
+      }
+
       letterinput.onkeyup = function (e) {
-        if (e.key === 'Backspace') {
-          if (letterinput.previousElementSibling) {
-            // console.log(e.key);
-            letterinput.previousElementSibling.focus();
-          }
-        } else {
-          if (letterinput.nextElementSibling) {
-            letterinput.nextElementSibling.focus();
-          }
+        switch (e.key) {
+          case 'ArrowLeft':
+            if (letterinput.previousElementSibling)
+              letterinput.previousElementSibling.focus();
+            break;
+          case 'ArrowRight':
+            if (letterinput.nextElementSibling) {
+              letterinput.nextElementSibling.focus();
+            }
+            break;
+          case 'Backspace':
+            if (letterinput.previousElementSibling) {
+              // console.log(e.key);
+              if (letterinput.value === '') {
+                letterinput.previousElementSibling.value = '';
+              }
+              letterinput.previousElementSibling.focus();
+            }
+            break;
+          default:
+            if (letterinput.nextElementSibling) {
+              letterinput.nextElementSibling.focus();
+            }
+            break;
         }
       };
 
       letterinput.setAttribute('type', 'text');
       letterinput.setAttribute('maxlength', '1');
-      letterinput.setAttribute('class', 'basic');
       row.appendChild(letterinput);
     }
 
@@ -190530,7 +190549,7 @@ function startGame() {
   document.body.getElementsByClassName('jeu')[0].appendChild(tbl);
 
   // appends <input> into <body>
-  document.body.getElementsByClassName('jeu')[0].appendChild(input);
+  // document.body.getElementsByClassName('jeu')[0].appendChild(input);
 
   tbl.setAttribute('class', 'tab');
 
@@ -190541,7 +190560,6 @@ function startGame() {
     }
   });
 }
-
 
 // Return input in a string
 function getWordInput() {
@@ -190559,7 +190577,7 @@ function getWordInput() {
   return wordCheck;
 }
 
-// Check the input 
+// Check the input
 function checkInput(input) {
   input = input.toUpperCase();
 
