@@ -1,0 +1,31 @@
+nav {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    background: #cfd8dc;
+    width: 100%;
+    text-align: left;
+    text-transform: uppercase;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    font-size: 2em;
+    justify-content: center;
+}
+nav li {
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+  }
+
+nav a {
+    text-decoration: none;
+    letter-spacing: 2px;
+    padding: 5px;
+}
